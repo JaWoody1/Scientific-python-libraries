@@ -5,9 +5,9 @@ import pandas as pd
 #show max columns
 #pd.set_option('display.max_columns', None)
 
-
-#print
-results = pd.read_excel("Lab.xlsx")
+results = pd.ExcelFile("Lab.xlsx")
+constantRun = pd.read_excel(results, 'Table1')
+intervalSprint = pd.read_excel(results, 'Table3')
 
 
 ###################################
@@ -16,5 +16,13 @@ results = pd.read_excel("Lab.xlsx")
 ###################################
 
 ###################################
-#return the data type of each row
-print (results)
+#return info on the data table
+#print (results.info())
+###################################
+
+part1time = constantRun["Time"]
+
+part2Time = intervalSprint["Time"]
+
+print(part1time)
+print(part2Time)
